@@ -1,0 +1,200 @@
+@charset "UTF-8";
+@import 'reset', 'contents', 'main', 'variables', 'mixin';
+
+/* layout */
+.container {
+  position: relative;
+  max-width: 820px; // 최대 820px
+  margin: 0 auto; padding: 76px 0 120px;
+}
+
+// comm
+.wrap-tit {
+  &.center {
+    text-align: center;
+    h2::after {
+      margin-right: auto; margin-left: auto;
+    }
+    p {
+      opacity: .5;
+    }
+  }
+  h2 {
+    font-size: 1.625em; color: #fff;
+    &::after {
+      content: '';
+      display: block;
+      width: 35px; height: 3px; 
+      margin: 58px 0 22px;
+      background: $w;
+    }
+  }
+  p {color: $w;}
+}
+
+.btn-g {
+  display: inline-block;
+  height: 63px; padding: 8px 13px; margin-top: 40px;
+  background: $b;
+  border: 1px solid #666; border-radius: 8px;
+  span {
+    width: 180px; height: 43px;
+    text-indent: -9999px;
+  }
+  &.btn-google {
+    span {
+      background-position: -15px -82px;
+    }
+  }
+  &.btn-apple {
+    span {
+      background-position: -235px -83px;
+    }
+  }
+}
+
+
+// jumbotron-intro
+.jumbotron-intro {
+  height: 638px; padding-top: 71px; margin-bottom: 0;
+  background: linear-gradient(115deg, #0dccbc, #315db6);
+  .container {
+      max-width: 950px;
+      padding: 0;
+  }
+  .col-right {
+      position: absolute;top: 0;right: -73px;
+      width: 535px; height: 740px;
+      background: url(../../images/header-slide.png) 0 0 no-repeat;
+      background-size: contain;
+      img {
+          position: absolute;top: 86px; left: 23px;
+          width: 287px;
+      }
+  }
+
+  .col-left {
+      width: 50%; padding: 113px 0 0 0;
+      em {
+        font-size: 1.875em; font-weight: 900;
+        letter-spacing: -1.2px;
+        color: #fff;
+      }
+      h1 {
+        width: 365px; height: 72px; margin: 27px 0 39px;
+        background-position: 0 0;
+        text-indent: -9999px;
+      }
+      p {
+          width: 420px;
+          color: #fff;
+      }
+    }
+}
+
+// sec-how
+.sec-how {
+  background: $charcoal-grey;
+  .lst-how {
+    display: flex; justify-content: space-between;
+    margin: 69px -40px 0 -15px;
+    li {
+      height: 260px; padding-top: 230px;
+      text-align: center; color: $w;
+      font-size: 1.063em; font-weight: 500;
+      &:first-child {
+        width: 228px;
+        background-position: 0 -140px;
+      }
+      &:nth-child(2) {
+        width: 232px;
+        background-position: -240px -140px;
+      }
+      &:nth-child(3) {
+        width: 231px;
+        background-position: -500px -140px;
+      }
+    }
+  }
+}
+
+// video
+.wrapper {
+  position: relative;
+  width: 100%; padding-bottom: 56.25%;
+  .player {
+    position: absolute;top: 0;left: 0;
+    width: 100%; height: 100%;
+  }
+}
+
+// sec-prizes
+.sec-prizes {
+  position: relative;
+  background-image: linear-gradient(115deg, #0dccbc, #315db6), url(../../images/bg-coin2.png) ;
+  .ico-coin1 {position: absolute;top: -10px;right: 0;opacity: .5;transition: all .5s;}
+  .ico-coin2 {
+    position: absolute;bottom: -230px;left: 50%; z-index: 80;
+    transform: translateX(-50%);opacity: .3;
+  }
+  .container {
+      display: flex; justify-content: space-between;
+      flex-direction: row-reverse;
+      padding-bottom: 155px;
+  }
+  .col-img {
+      position: relative; 
+      width: 37%; margin-top: 70px;
+      &::before {
+          position: absolute;top: 158px;left: -185px; z-index: 90;
+          display: block;
+          width: 380px; height: 360px;
+          content: '';
+          background: url(../../images/bg-coin1.png) 0 0 no-repeat;
+          background-size: contain;
+      }
+      img {
+          position: relative;z-index: 100;
+          width: 100%;
+      }
+  }
+  .col-txt {
+      position: relative; z-index: 100;
+      display: flex;flex-direction: column;
+      width: 52%; margin-top: 68px;
+      h2 {
+          font-weight: 900; font-size: 1.75em;
+          letter-spacing: -.8px;
+      }
+      ul {
+          display: flex; flex-wrap: wrap; 
+          align-content: space-between;
+          flex-grow: 1;
+          margin-top: 35px;
+          // background: red;
+          }
+          li {
+              padding: 15px 30px;
+              background: rgba(0,0,0,.5);
+              &:hover, &.on {
+                  cursor: pointer;
+                  background: rgba(0,0,0,.9);
+              }
+          strong {
+              font-size: 1.05rem;
+          }
+          p {
+              margin-top: 3px;
+              font-size: 0.85rem;
+          }
+      }
+      
+      * {
+          color: #fff;
+      }
+  }
+}
+.sec-referral {
+  position: relative; z-index: 100;
+  background: $charcoal-grey;
+}
